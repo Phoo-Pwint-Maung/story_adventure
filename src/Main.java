@@ -24,6 +24,7 @@ public static void main(String[] args) {
     System.out.print("Type Here 1 or 2 : ");
     leftOrRight = input.nextInt();
 
+    // Check User input wrong ************
     while (leftOrRight != 1 && leftOrRight != 2) {
         System.out.println();
         System.out.println("You entered a wrong number! Choose again.");
@@ -33,7 +34,8 @@ public static void main(String[] args) {
     }
 
     System.out.println();
-    if (leftOrRight == 1) // Left
+    // 3. Choose Left
+    if (leftOrRight == 1)
     {
         System.out.println("The path leads deeper into darkness.");
         System.out.println("A strange and mysterious creature awaits you.");
@@ -45,8 +47,19 @@ public static void main(String[] args) {
         System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
         System.out.print("Type Here 1 or 2: ");
         attackOrRun = input.nextInt();
+        // Check User input wrong ************
+        while (attackOrRun != 1 && attackOrRun != 2) {
+            System.out.println();
+            System.out.println("You entered a wrong number! Choose again.");
+            System.out.println("Choose Attack or Run");
+            System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
+            System.out.print("Type Here 1 or 2: ");
+            attackOrRun = input.nextInt();
+            System.out.println();
+        }
 
-        if (attackOrRun == 1) // Attacking
+        // Attack
+        if (attackOrRun == 1)
         {
             playerDamage = random.nextInt(1, 5);
             System.out.println();
@@ -54,6 +67,7 @@ public static void main(String[] args) {
             afterAttack = enemyDamage - playerDamage;
             System.out.println();
 
+            // Attack Complete or Not
             while (afterAttack >= 1) {
                 System.out.println("Enemy is now " + afterAttack);
                 System.out.println("Do you want to continue?");
@@ -63,46 +77,61 @@ public static void main(String[] args) {
                 System.out.print("Type Here 1 or 2: ");
                 attackOrRun = input.nextInt();
                 System.out.println();
-
-                if (attackOrRun == 1) // Attack Again
+                // Check User input wrong ************
+                while (attackOrRun != 1 && attackOrRun != 2) {
+                    System.out.println();
+                    System.out.println("You entered a wrong number! Choose again.");
+                    System.out.println("Choose Attack or Run");
+                    System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
+                    System.out.print("Type Here 1 or 2: ");
+                    attackOrRun = input.nextInt();
+                    System.out.println();
+                }
+                // Attack Again
+                if (attackOrRun == 1)
                 {
                     playerDamage = random.nextInt(1, 5);
                     System.out.println("Your energy is ===>" + playerDamage);
                     afterAttack -= playerDamage;
-                } else if (attackOrRun == 2)  // Run
+                }
+                // Run
+                else if (attackOrRun == 2)
                 {
                     //Run , Escape possibility
                     run = random.nextBoolean();
-
+                    // Game Win by Running
                     if (run) {
-                        // Game Win by Running
                         System.out.println("Congratulations You Escape." + playerName);
-                    } else {
-                        // Game Over
+                    }
+                    // Game Over by Running
+                    else {
+
                         System.out.println("You are not escape. Game Over! " + playerName);
                     }
                     break;
                 }
             }
+
             // Game Win by Attacking enemy.
             System.out.println("Congratulations You Win the Enemy." + playerName);
         }
-        else  // Run
+        // Run
+        else
         {
             //Run , Escape possibility
             run = random.nextBoolean();
+            // Game Win by Running
             if (run) {
-                // Game Win by Running
                 System.out.println(playerName + "!!! Congratulations You Escape.");
-            } else {
-                // Game Over
+            }
+            // Game Over
+            else {
                 System.out.println(playerName + "!!! You are NOT escape. Game Over! ");
             }
         }
-
-
     }
-    else// Right
+    // 4. Choose Right
+    else
     {
         System.out.println("The trail winds along a riverbank.");
         System.out.println("A fierce dragon guards the path.");
@@ -114,15 +143,26 @@ public static void main(String[] args) {
         System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
         System.out.print("Type Here 1 or 2: ");
         attackOrRun = input.nextInt();
+        // Check User input wrong ************
+        while (attackOrRun != 1 && attackOrRun != 2) {
+            System.out.println();
+            System.out.println("You entered a wrong number! Choose again.");
+            System.out.println("Choose Attack or Run");
+            System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
+            System.out.print("Type Here 1 or 2: ");
+            attackOrRun = input.nextInt();
+            System.out.println();
+        }
 
-        if (attackOrRun == 1) // Attacking
+        // Attack
+        if (attackOrRun == 1)
         {
             playerDamage = random.nextInt(1, 5);
             System.out.println();
             System.out.println("Your energy is ==== >  " + playerDamage);
             afterAttack = enemyDamage - playerDamage;
             System.out.println();
-
+            // Attack Complete or Not
             while (afterAttack >= 1) {
                 System.out.println("Enemy is now " + afterAttack);
                 System.out.println("Do you want to continue?");
@@ -132,14 +172,25 @@ public static void main(String[] args) {
                 System.out.print("Type Here 1 or 2: ");
                 attackOrRun = input.nextInt();
                 System.out.println();
-
-                if (attackOrRun == 1) // Attack Again
+                // Check User input wrong ************
+                while (attackOrRun != 1 && attackOrRun != 2) {
+                    System.out.println();
+                    System.out.println("You entered a wrong number! Choose again.");
+                    System.out.println("Choose Attack or Run");
+                    System.out.println("( 1 -> Attack ) and ( 2 -> Run )");
+                    System.out.print("Type Here 1 or 2: ");
+                    attackOrRun = input.nextInt();
+                    System.out.println();
+                }
+                // Attack Again
+                if (attackOrRun == 1)
                 {
                     playerDamage = random.nextInt(1, 5);
                     System.out.println();
                     System.out.println("Your energy is ===> " + playerDamage);
                     afterAttack -= playerDamage;
-                } else if (attackOrRun == 2)  // Run
+                } // Run
+                else if (attackOrRun == 2)
                 {
                     //Run , Escape possibility
                     run = random.nextBoolean();
